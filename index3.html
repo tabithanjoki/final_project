@@ -67,8 +67,22 @@
                 </fieldset>
                 <fieldset>
                     <legend>Household & Occupation</legend>
-                    <div
+                    <div class="grid-row">
+                        <label for="marital_status">Marital Status</label><br>
+                        <select id="marital_status" name="marital_status">
+                            <option value="single">Single</option>
+                            <option value="married">Married(3+ years)</option>
+                            <option value="widowed">Widowed</option>
+                            <option value="Married">Newly Married</option>
+                        </select>
+                        <label for="occupants">Total household occupants</label><br>
+                        <input type="number" id="occupants" name="occupants" min="1" required><br><br>
+                        <label for="occupation"> Occupation</label><br>
+                        <input type="text" id="occupation" name="occupation" placeholder="e.g farmer,Doctor" required><br><br>
+                    </div>
                 </fieldset>
+                <!-- compliance -->
+                 
                 
             
                 
