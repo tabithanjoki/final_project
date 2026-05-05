@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>foster_care</title>
 </head>
 <body>
@@ -22,7 +23,8 @@
         <section>
             <p>we would like to warmly welcome you to our family</p>
             <p>by filling in this form,you agree to our terms and conditions</p>
-            <p>to read the terms and conditions click the button below:</p>
+            <p>filling in this form legally binds you to abide by <strong> all </strong> of our terms and conditions</p>
+            <p><strong> To read the terms and conditions click the button below:</strong></p>
             <div>
                 <a href="index4.html"><button>Terms & Conditions</button></a>
             </div>
@@ -90,13 +92,18 @@
                  </fieldset>
                  <!-- preference -->
                   <fieldset>
-                    <legend></legend>
+                    <legend>Fostering Intent</legend>
+                    <label for="preference">Preferred Age Range</label><br>
+                    <select id="preference" name="preference">
+                        <option value="infant">0-2 years</option>
+                        <option value="young">3-10 years</option>
+                        <option value="teen">11-17 years</option>
+                        <option value="any">any</option>
+                    </select><br><br>
+                    <label for="motivation">why do you wish to foster a child?</label><br>
+                    <textarea id="motivation" name="motivation" rows="4"></textarea><br><br>
                   </fieldset>
-
-                
-            
-                
-
+                  <button type="submit" class="submit-button">submit</button>
             </form>
 
         </section>
