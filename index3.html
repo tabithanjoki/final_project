@@ -31,21 +31,47 @@
         <section>
             <p>KINDLY FILL IN ALL THE DETAILS REQUIRED</p>
             <form>
+                <!-- primary application details -->
                 <div class="grid-row">
                     <label for="name">First Name</label><br>
                 <input type="text" id="name" name="name" required /><br/><br/>
                 <label for="name">Second Name</label><br>
                 <input type="text" id="name" name="name" required /><br/><br/>
                 <label for="name">Third Name</label><br>
+                <input type="text" id="name" name="name" required /><br/><br/>
                 </div>
-                
-                <label for="age">Age</label><br>
-                <input type="number" id="age" name="age"rquired/><br><br>
-                <label for="ID number">ID number</label><br>
-                <input type="number" id="ID" name="ID number" required/><br><br>
+                <div class="grid-row">
+                    <label for="age">Date of Birth</label><br>
+                <input type="date" id="age" name="age"rquired/><br><br>
+                <label for="ID number">ID/MAISHA number</label><br>
+                <input type="number" id="ID" name="ID number" min="7" max="14" required/><br><br>
                 <label for="Number">Phone number</label><br>
                 <input type="tel" id="phone" name="phone number"/><br><br>
-                <label
+                </div>
+                <div class="grid-row">
+                    <label for="email">Email</label><br>
+                    <input type="email" id="email" name="email"><br><br>
+                    <label for="email">Email</label><br>
+                    <input type="email" id="email" name="email"><br><br>
+                </div>
+                <fieldset>
+                    <legend>Residential Details</legend>
+                    <div class="grid-row">
+                        <label for="county">County</label><br>
+                        <input type="text" id="county" name="county" required><br><br>
+                        <label for="sub_county">Sub-county</label><br>
+                        <input type="text" id="sub_county" name="sub_county"  required><br><br>
+                        <label for="physical_address">Village/Estate</label><br>
+                        <textarea id="physical_address" name="physical_adress" rows="2" required></textarea><br><br>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Household & Occupation</legend>
+                    <div
+                </fieldset>
+                
+            
+                
 
             </form>
 
