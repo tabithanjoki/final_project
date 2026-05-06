@@ -14,7 +14,7 @@ body {
     padding: 0;
 }
 
-/* Header Styles */
+/* Header */
 header {
     background-color: #2c3e50;
     color: white;
@@ -36,7 +36,6 @@ header h2 {
     opacity: 0.9;
 }
 
-/* Navigation */
 nav ul {
     list-style: none;
     padding: 0;
@@ -61,7 +60,7 @@ nav a:hover {
     background-color: #34495e;
 }
 
-/* Logo */
+/* logos */
 .logo {
     max-width: 100px;
     height: auto;
@@ -90,7 +89,7 @@ section h3, section h5 {
     font-size: 1.5em;
 }
 
-/* Paragraphs */
+/* paragraphs */
 p {
     margin-bottom: 15px;
     text-align: justify;
@@ -101,7 +100,7 @@ p {
     color: #7f8c8d;
 }
 
-/* Images */
+
 img {
     max-width: 100%;
     height: auto;
@@ -126,7 +125,7 @@ button:hover, .submit-button:hover {
     background-color: #2980b9;
 }
 
-/* Links */
+/* links */
 a {
     color: #3498db;
     text-decoration: none;
