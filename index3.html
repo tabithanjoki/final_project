@@ -1,118 +1,193 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
     <title>foster_care</title>
-</head>
-<body>
+  </head>
+  <body>
     <header class="header">
-        <h1>JOIN US</h1>
-        <h2>give a child a home</h2>
-        <nav>
-            <ul>
-                <li><a href="index1.html"> Home</a></li>
-                <li><a href="index2.html">About</a></li>
-                <li><a href ="index3.html">Join</a></li>
-            </ul>
-        </nav>
-        <img src="logo1.jpg" alt="logo" class="logo">
+      <h1>JOIN US</h1>
+      <h2>give a child a home</h2>
+      <nav>
+        <ul>
+          <li><a href="index1.html"> Home</a></li>
+          <li><a href="index2.html">About</a></li>
+          <li><a href="index3.html">Join</a></li>
+        </ul>
+      </nav>
+      <img src="logo1.jpg" alt="logo" class="logo" />
     </header>
     <main>
-        <section>
-            <p>we would like to warmly welcome you to our family</p>
-            <p>by filling in this form,you agree to our terms and conditions</p>
-            <p>filling in this form legally binds you to abide by <strong> all </strong> of our terms and conditions</p>
-            <p><strong> To read the terms and conditions click the button below:</strong></p>
-            <div>
-                <a href="index4.html"><button>Terms & Conditions</button></a>
+      <section>
+        <p>we would like to warmly welcome you to our family</p>
+        <p>by filling in this form,you agree to our terms and conditions</p>
+        <p>
+          filling in this form legally binds you to abide by
+          <strong> all </strong> of our terms and conditions
+        </p>
+        <p>
+          <strong>
+            To read the terms and conditions click the button below:</strong
+          >
+        </p>
+        <div>
+          <a href="index4.html"><button>Terms & Conditions</button></a>
+        </div>
+      </section>
+      <!-- form -->
+      <section>
+        <p>KINDLY FILL IN ALL THE DETAILS REQUIRED</p>
+        <form id="application-form">
+          <div id="form-feedback" class="feedback"></div>
+          <!-- primary application details -->
+          <fieldset>
+            <legend>Primary Application Details</legend>
+            <div class="grid-row">
+              <label for="first_name">First Name</label><br />
+              <input
+                type="text"
+                id="first_name"
+                name="first_name"
+                required
+              /><br /><br />
+              <label for="second_name">Second Name</label><br />
+              <input
+                type="text"
+                id="second_name"
+                name="second_name"
+                required
+              /><br /><br />
+              <label for="third_name">Third Name</label><br />
+              <input
+                type="text"
+                id="third_name"
+                name="third_name"
+                required
+              /><br /><br />
             </div>
-        </section>
-        <!-- form -->
-        <section>
-            <p>KINDLY FILL IN ALL THE DETAILS REQUIRED</p>
-            <form>
-                <!-- primary application details -->
-                 <fieldset>
-                    <legend>Primary Application Details</legend>
-                    <div class="grid-row">
-                    <label for="name">First Name</label><br>
-                <input type="text" id="name" name="name" required /><br/><br/>
-                <label for="name">Second Name</label><br>
-                <input type="text" id="name" name="name" required /><br/><br/>
-                <label for="name">Third Name</label><br>
-                <input type="text" id="name" name="name" required /><br/><br/>
-                </div>
-                <div class="grid-row">
-                    <label for="age">Date of Birth</label><br>
-                <input type="date" id="age" name="age"rquired/><br><br>
-                <label for="ID number">ID/MAISHA number</label><br>
-                <input type="number" id="ID" name="ID number" min="7" max="14" required/><br><br>
-                <label for="Number">Phone number</label><br>
-                <input type="tel" id="phone" name="phone number"/><br><br>
-                </div>
-                <div class="grid-row">
-                    <label for="email">Email</label><br>
-                    <input type="email" id="email" name="email"><br><br>
-                    <label for="email">Email</label><br>
-                    <input type="email" id="email" name="email"><br><br>
-                </div>
-                 </fieldset>
-               
-                <fieldset>
-                    <legend>Residential Details</legend>
-                    <div class="grid-row">
-                        <label for="county">County</label><br>
-                        <input type="text" id="county" name="county" required><br><br>
-                        <label for="sub_county">Sub-county</label><br>
-                        <input type="text" id="sub_county" name="sub_county"  required><br><br>
-                        <label for="physical_address">Village/Estate</label><br>
-                        <textarea id="physical_address" name="physical_adress" rows="2" required></textarea><br><br>
-                    </div>
-                </fieldset>
-                <fieldset>
-                    <legend>Household & Occupation</legend>
-                    <div class="grid-row">
-                        <label for="marital_status">Marital Status</label><br>
-                        <select id="marital_status" name="marital_status">
-                            <option value="single">Single</option>
-                            <option value="married">Married(3+ years)</option>
-                            <option value="widowed">Widowed</option>
-                            <option value="Married">Newly Married</option>
-                        </select><br><br>
-                        <label for="occupants">Total household occupants</label><br>
-                        <input type="number" id="occupants" name="occupants" min="1" required><br><br>
-                        <label for="occupation"> Occupation</label><br>
-                        <input type="text" id="occupation" name="occupation" placeholder="e.g farmer,Doctor" required><br><br>
-                    </div>
-                </fieldset>
-                <!-- compliance -->
-                 <fieldset>
-                    <legend> Required Documentation</legend><br>
-                    <p class="note">upload clear PDF or JPG scans</p><br><br>
-                    <label for="medical_report">Recent medical report</label><br>
-                    <input type="file" id="medical_report" name="medical_report" accept=".pdf,.jpg,.png" required><br><br>
-                 </fieldset>
-                 <!-- preference -->
-                  <fieldset>
-                    <legend>Fostering Intent</legend>
-                    <label for="preference">Preferred Age Range</label><br>
-                    <select id="preference" name="preference">
-                        <option value="infant">0-2 years</option>
-                        <option value="young">3-10 years</option>
-                        <option value="teen">11-17 years</option>
-                        <option value="any">any</option>
-                    </select><br><br>
-                    <label for="motivation">why do you wish to foster a child?</label><br>
-                    <textarea id="motivation" name="motivation" rows="4"></textarea><br><br>
-                  </fieldset>
-                  <button type="submit" class="submit-button">submit</button>
-            </form>
+            <div class="grid-row">
+              <label for="dob">Date of Birth</label><br />
+              <input type="date" id="dob" name="dob" required /><br /><br />
+              <label for="id_number">ID/MAISHA number</label><br />
+              <input
+                type="text"
+                id="id_number"
+                name="id_number"
+                required
+              /><br /><br />
+              <label for="phone">Phone number</label><br />
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                required
+                pattern="[0-9]{9,12}"
+                placeholder="e.g. 0712345678"
+              /><br /><br />
+            </div>
+            <div class="grid-row">
+              <label for="email">Email</label><br />
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                placeholder="you@example.com"
+              /><br /><br />
+            </div>
+          </fieldset>
 
-        </section>
+          <fieldset>
+            <legend>Residential Details</legend>
+            <div class="grid-row">
+              <label for="county">County</label><br />
+              <input
+                type="text"
+                id="county"
+                name="county"
+                required
+              /><br /><br />
+              <label for="sub_county">Sub-county</label><br />
+              <input
+                type="text"
+                id="sub_county"
+                name="sub_county"
+                required
+              /><br /><br />
+              <label for="physical_address">Village/Estate</label><br />
+              <textarea
+                id="physical_address"
+                name="physical_address"
+                rows="2"
+                required
+              ></textarea
+              ><br /><br />
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Household & Occupation</legend>
+            <div class="grid-row">
+              <label for="marital_status">Marital Status</label><br />
+              <select id="marital_status" name="marital_status">
+                <option value="single">Single</option>
+                <option value="married">Married (3+ years)</option>
+                <option value="widowed">Widowed</option>
+                <option value="newly_married">Newly Married</option></select
+              ><br /><br />
+              <label for="occupants">Total household occupants</label><br />
+              <input
+                type="number"
+                id="occupants"
+                name="occupants"
+                min="1"
+                required
+              /><br /><br />
+              <label for="occupation">Occupation</label><br />
+              <input
+                type="text"
+                id="occupation"
+                name="occupation"
+                placeholder="e.g farmer, Doctor"
+                required
+              /><br /><br />
+            </div>
+          </fieldset>
+          <!-- compliance -->
+          <fieldset>
+            <legend>Required Documentation</legend>
+            <br />
+            <p class="note">upload clear PDF or JPG scans</p>
+            <br /><br />
+            <label for="medical_report">Recent medical report</label><br />
+            <input
+              type="file"
+              id="medical_report"
+              name="medical_report"
+              accept=".pdf,.jpg,.png"
+              required
+            /><br /><br />
+          </fieldset>
+          <!-- preference -->
+          <fieldset>
+            <legend>Fostering Intent</legend>
+            <label for="preference">Preferred Age Range</label><br />
+            <select id="preference" name="preference">
+              <option value="infant">0-2 years</option>
+              <option value="young">3-10 years</option>
+              <option value="teen">11-17 years</option>
+              <option value="any">any</option></select
+            ><br /><br />
+            <label for="motivation">Why do you wish to foster a child?</label
+            ><br />
+            <textarea id="motivation" name="motivation" rows="4"></textarea
+            ><br /><br />
+          </fieldset>
+          <button type="submit" class="submit-button">submit</button>
+        </form>
+      </section>
     </main>
     <script src="code.js"></script>
-    
-</body>
+  </body>
 </html>
