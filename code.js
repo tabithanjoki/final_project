@@ -48,6 +48,21 @@ function initForm() {
   const feedback = document.getElementById("form-feedback");
   if (!form) return;
 
+  const applicant = getSavedApplicant();
+  if (!applicant || !applicant.termsAccepted) {
+    showMessage(
+      feedback,
+      "Please read and accept the terms and conditions first before filling the form. Redirecting to Terms page...",
+      "error",
+    );
+    setTimeout(() => {
+      window.location.href = "index4.html";
+    }, 3000);
+    return;
+  }
+
+  form.querySelector(".submit-button").disabled = false;
+
   form.addEventListener("submit", (event) => {
     event.preventDefault();
 
@@ -95,7 +110,7 @@ function initForm() {
       return;
     }
 
-    const applicant = {
+    const updatedApplicant = {
       first_name,
       second_name,
       third_name,
@@ -112,15 +127,12 @@ function initForm() {
       medical_report: reportFile.name,
       preference,
       motivation,
-      termsAccepted: false,
+      termsAccepted: true,
       savedAt: new Date().toISOString(),
     };
 
-    saveApplicant(applicant);
-    showMessage(
-      feedback,
-      "Application saved successfully. Now visit the Terms page to accept the terms.",
-    );
+    saveApplicant(updatedApplicant);
+    showMessage(feedback, "Application saved successfully.");
     renderSavedData();
   });
 }
@@ -135,8 +147,8 @@ function initTerms() {
   if (!applicant) {
     showMessage(
       termsStatus,
-      "No saved application found. Complete the Join form first.",
-      "error",
+      "Accept the terms to start your application.",
+      "success",
     );
   } else {
     showMessage(
@@ -152,24 +164,18 @@ function initTerms() {
 
   button.addEventListener("click", () => {
     const currentApplicant = getSavedApplicant();
-    if (!currentApplicant) {
-      showMessage(
-        termsStatus,
-        "No saved application found. Complete the Join form first.",
-        "error",
-      );
-      return;
-    }
-    if (currentApplicant.termsAccepted) {
+    if (currentApplicant && currentApplicant.termsAccepted) {
       showMessage(termsStatus, "Terms have already been accepted.", "success");
       return;
     }
 
-    currentApplicant.termsAccepted = true;
-    saveApplicant(currentApplicant);
+    const updatedApplicant = currentApplicant || {};
+    updatedApplicant.termsAccepted = true;
+    updatedApplicant.savedAt = new Date().toISOString();
+    saveApplicant(updatedApplicant);
     showMessage(
       termsStatus,
-      "Terms accepted. Your application data is now saved.",
+      "Terms accepted. You can now proceed to fill the application form.",
       "success",
     );
   });
