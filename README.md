@@ -32,12 +32,9 @@ The Tumaini Foster Care Portal serves as the primary intake system for the organ
 
 ## Technologies Used
 
-| Technology | Purpose |
-|-----------|---------|
-| **HTML5** | Semantic markup and form structure |
-| **CSS3** | Styling, layout, and responsive design |
-| **JavaScript (Vanilla)** | Form validation, DOM manipulation, and event handling |
-| **localStorage API** | Data persistence across browser sessions |
+Javascript
+CSS
+HTML
 
 ---
 
@@ -84,9 +81,9 @@ foster_care/
 ├── README.md            # Project documentation
 ├── logo1.jpg            # Organization logo
 ├── the_home.jpg         # Organization facility image
-├── kids.jpg             # Children/community image
-├── kids2.jpg            # Children/community image
-└── kids3.jpg            # Children/community image
+├── kids.jpg             # Children image
+├── kids2.jpg            # Children image
+└── kids3.jpg            # Children image
 ```
 
 ### Page Descriptions
@@ -106,7 +103,7 @@ foster_care/
 
 ---
 
-## Code Architecture
+
 
 ### Core Functions in `code.js`
 
