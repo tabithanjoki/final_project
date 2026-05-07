@@ -1,21 +1,28 @@
-// This JavaScript file handles the foster care application form
-// It saves applicant data to the browser's local storage and validates form inputs
-// Created for Tumaini Foster Care application system
 
+  // TUMAINI FOSTER CARE APPLICATION SYSTEM
+// Storage key used for localStorage - unique identifier for applicant data
 const storageKey = "tumainiFosterCareApplicant";
 
+  // RETRIEVES SAVED APPLICANT DATA
+ 
 function getSavedApplicant() {
   try {
     return JSON.parse(localStorage.getItem(storageKey)) || null;
   } catch (error) {
+  
     return null;
   }
 }
 
+
+//  SAVES APPLICANT DATA TO LOCALSTORAGE
+ 
 function saveApplicant(data) {
   localStorage.setItem(storageKey, JSON.stringify(data));
 }
 
+
+  // DISPLAYS FEEDBACK MESSAGES
 function showMessage(element, text, type = "success") {
   if (!element) return;
   element.textContent = text;
@@ -23,6 +30,10 @@ function showMessage(element, text, type = "success") {
   element.classList.add(type === "error" ? "message-error" : "message-success");
 }
 
+
+//  RENDERS SAVED APPLICANT DATA
+ 
+ 
 function renderSavedData() {
   const savedDataSection = document.getElementById("saved-data");
   if (!savedDataSection) return;
@@ -36,6 +47,7 @@ function renderSavedData() {
     return;
   }
 
+  // Display key applicant information in a formatted template
   savedDataSection.innerHTML = `
     <h2>Saved application details</h2>
     <p><strong>Name:</strong> ${applicant.first_name} ${applicant.second_name} ${applicant.third_name}</p>
@@ -47,12 +59,16 @@ function renderSavedData() {
   `;
 }
 
+
+  // INITIALIZES APPLICATION FORM
+
 function initForm() {
   const form = document.getElementById("application-form");
   const feedback = document.getElementById("form-feedback");
   if (!form) return;
 
   const applicant = getSavedApplicant();
+  // Enforce terms acceptance before allowing form completion
   if (!applicant || !applicant.termsAccepted) {
     showMessage(
       feedback,
@@ -67,9 +83,11 @@ function initForm() {
 
   form.querySelector(".submit-button").disabled = false;
 
+  // Handle form submission with event listener
   form.addEventListener("submit", (event) => {
     event.preventDefault();
 
+    // Collect all form field values and trim whitespace
     const first_name = form.first_name.value.trim();
     const second_name = form.second_name.value.trim();
     const third_name = form.third_name.value.trim();
@@ -87,6 +105,7 @@ function initForm() {
     const motivation = form.motivation.value.trim();
     const reportFile = document.getElementById("medical_report")?.files[0];
 
+    // Perform comprehensive validation
     const errors = [];
     if (!first_name) errors.push("First name is required.");
     if (!second_name) errors.push("Second name is required.");
@@ -96,11 +115,13 @@ function initForm() {
     if (!phone) {
       errors.push("Phone number is required.");
     } else if (!/^[0-9]{9,12}$/.test(phone)) {
+      // Validate phone format using regex
       errors.push("Phone number must be 9 to 12 digits.");
     }
     if (!email) {
       errors.push("Email is required.");
     } else if (!form.email.checkValidity()) {
+      // Use HTML email validation
       errors.push("Please enter a valid email address.");
     }
     if (!county) errors.push("County is required.");
@@ -109,11 +130,13 @@ function initForm() {
     if (!occupation) errors.push("Occupation is required.");
     if (!reportFile) errors.push("Medical report file is required.");
 
+    // Display all errors if validation fails
     if (errors.length) {
       showMessage(feedback, errors.join(" "), "error");
       return;
     }
 
+    // Create complete applicant object with all collected data
     const updatedApplicant = {
       first_name,
       second_name,
@@ -135,6 +158,7 @@ function initForm() {
       savedAt: new Date().toISOString(),
     };
 
+    // Persist data and provide feedback
     saveApplicant(updatedApplicant);
     showMessage(feedback, "Application saved successfully.");
     renderSavedData();
