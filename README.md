@@ -164,7 +164,7 @@ If you need to clear your saved application data:
 
 For questions or support regarding the Tumaini Foster Care Portal, please contact:
 - **Organization:** Tumaini Children's Home
-- **Email:** info@tumaini.org
+- **Email:** t8080438@gmail.com
 - **Location:** Kenya
 - **Since:** 2005
 
