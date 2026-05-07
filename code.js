@@ -1,3 +1,7 @@
+// This JavaScript file handles the foster care application form
+// It saves applicant data to the browser's local storage and validates form inputs
+// Created for Tumaini Foster Care application system
+
 const storageKey = "tumainiFosterCareApplicant";
 
 function getSavedApplicant() {
@@ -15,8 +19,8 @@ function saveApplicant(data) {
 function showMessage(element, text, type = "success") {
   if (!element) return;
   element.textContent = text;
-  element.style.color = type === "error" ? "#c0392b" : "#1d8348";
-  element.style.padding = "0.5rem 0.75rem";
+  element.classList.remove("message-success", "message-error");
+  element.classList.add(type === "error" ? "message-error" : "message-success");
 }
 
 function renderSavedData() {
