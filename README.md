@@ -158,17 +158,7 @@ Application data is stored in browser localStorage under the key: `tumainiFoster
 
 ---
 
-## Browser Compatibility
 
-| Browser | Supported |
-|---------|-----------|
-| Chrome 90+ | ✅ Yes |
-| Firefox 88+ | ✅ Yes |
-| Safari 14+ | ✅ Yes |
-| Edge 90+ | ✅ Yes |
-| IE 11 | ❌ No |
-
----
 
 ## How to Delete a Saved Application
 
