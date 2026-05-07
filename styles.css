@@ -263,6 +263,11 @@ input:focus, select:focus, textarea:focus {
         flex-direction: column;
     }
 }
-footer{
-    
+.footer {
+    display: flex;
+    background-color: #2c3e50;
+    color: white;
+    justify-content: center;
+    padding: 20px; 
+
 }
